@@ -26,5 +26,28 @@ class FiveController < ApplicationController
     def chil
         
     end
+    
+    def pal
+        
+    end
+    
+    def goo
+        
+    end
+    
+    def sip
+        @posts = Post.all
+    end
+    
+    def write
+        post = Post.new
+        post.post_univ = params[:univ]
+        post.post_univ_other = params[:univ_other]
+        post.post_password = params[:passwd]
+        post.post_content = params[:content]
+        post.save
+        redirect_to '/'
+        
+    end
 
 end

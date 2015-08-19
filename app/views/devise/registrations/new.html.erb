@@ -1,8 +1,9 @@
 <h2>Sign up</h2>
 
-<form action="/five/sa" method="POST">
-  <%= devise_error_messages! %>
 
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  
 
   <div class="field">
     <%= f.label :email %><br />
@@ -23,7 +24,7 @@
   </div>
 
   <div class="actions">
-   <%= f.submit "가입하기" %>  
+   <%= f.submit "가입하기", :action => '/five/sa' %>  
   </div>
 <% end %>
 
