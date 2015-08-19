@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20150819083842) do
 
   create_table "posts", force: :cascade do |t|
-    t.string   "post_"
+    t.string   "post_univ"
     t.string   "post_univ_other"
     t.string   "post_password"
     t.text     "post_content"

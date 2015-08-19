@@ -3,15 +3,14 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
 
 
-      t.string :post_
+      t.string :post_univ
       t.string :post_univ_other
       t.string :post_password
       t.text :post_content
-
-
 
 
       t.timestamps null: false
     end
   end
 end
+
