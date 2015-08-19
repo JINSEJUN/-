@@ -5,13 +5,13 @@
  
 <% unless user_signed_in? %>
     <form action="/users/sign_in" method="POST">
-        <input class="btn btn-primary" type="submit" value="로그인">
+        <input class="btn btn-default" type="submit" value="로그인">
     </form>
 
 <br>
 
 <form action="/users/sign_up" method="GET">
-    <input class="btn btn-primary" type="submit" value="회원가입">
+    <input class="btn btn-default" type="submit" value="회원가입">
 </form>
 
 <% else %>
@@ -21,12 +21,12 @@
 <form action="/users/sign_out" method="GET">
 
 <%= current_user.email %>님으로 로그인
-        <input class="btn btn-primary" type="submit" value="로그아웃">
+        <input class="btn btn-default" type="submit" value="로그아웃">
         <%= link_to '로그아웃', destroy_user_session_path %>
         <%= link_to '정보수정', edit_user_registration_path %>
 </form>
 <form action="/five/sa" method="POST">
-        <input class="btn btn-primary" type="submit" value="사용법">
+        <input class="btn btn-default" type="submit" value="사용법">
 </form>
 
 
