@@ -1,38 +1,37 @@
 <%= render :partial => "five/pencil" %>
 
-    <% @posts.reverse_each do |p|%>
-<div class= "container-fluid">
-    <div class="row">
-        <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <div style="text-align:center;">
-                    <div class="panel panel-info">
-                      <div class="panel-heading">
-                        <h3 class="panel-title"><%= p.post_univ%> : <%= p.post_univ_other%></h3>
-                      </div>
-                      <div class="panel-body">
-                          <div style="font-size:30px;">
-                             <strong><%= p.post_content%></strong>
+
+    <form action="/five/oh" method="POST">
+        <input class="btn btn-default" type="submit" value="또 미팅할래 맨날할래"> <br> <br>
+    </form>
+<% @posts.reverse_each do |p|%>
+    <div class= "container-fluid">
+        <div class="row">
+            <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div style="text-align:center;">
+                        <div class="panel panel-info">
+                          <div class="panel-heading">
+                            <h3 class="panel-title"><%= p.post_univ%> : <%= p.post_univ_other%></h3>
                           </div>
-                            <a href="/powerade/fakedel/<%= p.id %>">[글 삭제]</a>
-                            <a href="/powerade/modify/<%= p.id %>">[글 수정]</a><br />   
-                            
-                                <span class="label label-primary">댓글</span>
-                            
-                            
-                            
-                            
-                            <form action="powerade/write_reply" type="POST">
-                                <input type="hidden" name="post_id" value="<%=p.id%>">
-                                <input type="text" name="myreply">
-                                <input type="submit" value="리플달기">
-                              </form>
-                            <br/>
-                      </div>
+                          <div class="panel-body">
+                              <div style="font-size:30px;">
+                                 <strong><%= p.post_content%></strong>
+                              </div>
+                                <a href="/powerade/fakedel/<%= p.id %>">[글 삭제]</a>
+                                <a href="/powerade/modify/<%= p.id %>">[글 수정]</a><br />   
+                                    <span class="label label-primary">댓글</span>
+                                <form action="powerade/write_reply" type="POST">
+                                    <input type="hidden" name="post_id" value="<%=p.id%>">
+                                    <input type="text" name="myreply">
+                                    <input type="submit" value="리플달기">
+                                  </form>
+                                <br/>
+                          </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3"></div>
-    </div>    
-</div>
-    <% end %>
+                <div class="col-md-3"></div>
+        </div>    
+    </div>
+<% end %>

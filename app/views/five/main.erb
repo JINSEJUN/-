@@ -16,8 +16,14 @@
 
 <% else %>
 
+
+
 <form action="/users/sign_out" method="GET">
+
+<%= current_user.email %>님으로 로그인
         <input class="btn btn-default" type="submit" value="로그아웃">
+        <%= link_to '로그아웃', destroy_user_session_path %>
+        <%= link_to '정보수정', edit_user_registration_path %>
 </form>
 <form action="/five/sa" method="POST">
         <input class="btn btn-default" type="submit" value="사용법">

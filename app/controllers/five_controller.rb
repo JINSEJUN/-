@@ -1,6 +1,14 @@
 class FiveController < ApplicationController
     def main
+        if user_signed_in? 
         
+        redirect_to '/five/sa'
+        
+    else 
+        
+        end
+        
+      
     end
     
     def lee

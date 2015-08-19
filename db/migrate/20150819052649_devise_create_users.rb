@@ -3,10 +3,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
     create_table(:users) do |t|
       
       ## 만든거
-      t.string :sex, null: false, default: ""
-      t.string :age, null: false, default: ""
-      t.string :univ, null: false, default: ""
-      t.string :region, null: false, default: ""
+      t.string :sex,                null: false, default: ""
+      t.string :age,                null: false, default: ""
+      t.string :univ,               null: false, default: ""
+      t.string :region,             null: false, default: ""
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
