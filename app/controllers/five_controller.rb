@@ -4,7 +4,7 @@ class FiveController < ApplicationController
         
         redirect_to '/five/sa'
         
-    else 
+        else 
         
         end
         
@@ -33,6 +33,15 @@ class FiveController < ApplicationController
     
     def chil
         
+        while(true)
+            @result = User.where(:univ => params[:search]).sample
+            
+            if @result.email != current_user.email
+                break;
+            end
+        end
+        
+        
     end
     
     def pal
@@ -57,6 +66,12 @@ class FiveController < ApplicationController
         post.save
         
       
+    end
+    
+    
+    def main2
+   
+        
     end
 
 end
