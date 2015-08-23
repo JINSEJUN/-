@@ -1,8 +1,10 @@
 class FiveController < ApplicationController
     def main
+        
+        
         if user_signed_in? 
         
-        redirect_to '/five/sa'
+        redirect_to '/five/oh'
         
         else 
         end
@@ -33,10 +35,16 @@ class FiveController < ApplicationController
     def chil
         
         while(true)
-            @result = User.where(:univ => params[:search]).sample
+            @result = User.where(:univ => params[:search])
+            @result2 = @result.sample
             
-            if @result.email != current_user.email
+            if @result2.email != current_user.email
                 break;
+            elsif @result.nil?
+                return redirect_to '/'
+            else @result.count == 1 && @result2.email == current_user.email
+                return redirect_to '/'
+                
             end
         end
         

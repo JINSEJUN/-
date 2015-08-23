@@ -1,12 +1,13 @@
 <%= render :partial => "five/pencil" %>
 
 <h1>후기를 수정해주세요</h1> <br>
-<div style="text-align:center;">    
+<div style="text-align:center;" class="container form-group">    
     <form action="/five/write/<%= @one_post.id%>" method="POST">
-    대학교 :<input type="text" name="univ" value="<%= @one_post.post_univ%>"><br>
-    상대 대학교 :<input type="text" name="univ_other" value="<%= @one_post.post_univ_other%>"><br>
-    비밀번호(글 수정시 필요) :<input type="password" name="passwd" value="<%= @one_post.post_password%>"><br>
-    <textarea rows="4" cols="50" name="content" value="<%= @one_post.post_content%>"> </textarea><br>
+            
+    <input type="text" class="form-control" name="univ" value="<%= @one_post.post_univ%>"><br>
+    <input type="text" class="form-control" name="univ_other" value="<%= @one_post.post_univ_other%>"><br>
+    <input type="password" name="passwd" class="form-control" value="<%= @one_post.post_password%>"><br>
+    <textarea rows="4" cols="50" name="content" class="form-control" value="<%= @one_post.post_content%>"> </textarea><br>
     <input type="submit" class="btn btn-primary" value="후기 수정하기">
     <br> <br>
     

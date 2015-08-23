@@ -1,34 +1,44 @@
 
-
-<br><br
- <a href="#"><img src="/assets/메인페이지.PNG" /></a>
- 
- 
-<% unless user_signed_in? %>
-    <form action="/users/sign_in" method="POST">
-        <input class="btn btn-primary" type="submit" value="로그인">
-    </form>
-
-<br>
-
-<form action="/users/sign_up" method="GET">
-    <input class="btn btn-primary" type="submit" value="회원가입">
-</form>
-
-<% else %>
-
-
-
-<form action="/users/sign_out" method="GET">
-
-<%= current_user.email %>님으로 로그인
-        <input class="btn btn-primary" type="submit" value="로그아웃">
-        <%= link_to '로그아웃', destroy_user_session_path %>
-        <%= link_to '정보수정', edit_user_registration_path %>
-</form>
-<form action="/five/sa" method="POST">
-        <input class="btn btn-primary" type="submit" value="사용법">
-</form>
-
-
-<% end %>
+<div class="container-fluid" style="background-color: #18bc9c; height:90vh" >
+    
+    <br><br><br><br><br><br><br>
+   
+     <a href="/five/main"><img src="/assets/교수.PNG" /></a> 
+    
+     <h1>안녕? 오빠가 미팅잡아줄게</h1>
+     
+     
+    <% unless user_signed_in? %>
+    
+        <div class="container-fluid row">
+            <div class="col-md-6" style="text-align:right">
+                    <form action="/users/sign_in" method="POST">
+                        <input class="btn btn-success btn-lg" type="submit" value="로 그 인">
+                    </form>
+            </div>    
+                
+            <div class="col-md-6" style="text-align:left">    
+                    <form action="/users/sign_up" method="GET">
+                        <input class="btn btn-primary btn-lg" type="submit" value="회원가입">
+                    </form>
+            </div>
+        </div>
+    
+    <% else %>
+    
+        <form action="/users/sign_out" method="GET">
+        
+        <%= current_user.email %>님으로 로그인
+                <input class="btn btn-primary" type="submit" value="로그아웃">
+                <%= link_to '로그아웃', destroy_user_session_path %>
+                <%= link_to '정보수정', edit_user_registration_path %>
+        </form>
+        <form action="/five/sa" method="POST">
+                <input class="btn btn-primary" type="submit" value="사용법">
+        </form>
+    
+    
+    <% end %>
+  
+    
+</div>
