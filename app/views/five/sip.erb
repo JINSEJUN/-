@@ -1,6 +1,9 @@
 <%= render :partial => "five/pencil" %>
-
-
+	<style type="text/css">
+    .reply
+        {color:gray; font-size:8px; text-align:right; text-decoration:none;}
+    </style>
+    
     <form action="/five/oh" method="POST">
         <input class="btn btn-primary" type="submit" value="또 미팅할래 맨날할래"> <br> <br>
     </form>
@@ -13,20 +16,36 @@
                         <div class="panel panel-info">
                           <div class="panel-heading">
                             <h3 class="panel-title"><%= p.post_univ%> : <%= p.post_univ_other%></h3>
+                                <div style="text-align:right">
+                                    <a href="/five/delete/<%= p.id%>" class="label label-primary">삭제</a>
+                                    <a href="/five/checkmodify/<%= p.id%>" class="label label-primary">수정</a><br>  
+                                </div>
                           </div>
                           <div class="panel-body">
                               <div style="font-size:30px;">
                                  <strong><%= p.post_content%></strong>
                               </div>
-                                <a href="/powerade/fakedel/<%= p.id %>">[글 삭제]</a>
-                                <a href="/powerade/modify/<%= p.id %>">[글 수정]</a><br />   
-                                    <span class="label label-primary">댓글</span>
-                                <form action="powerade/write_reply" type="POST">
+                                 
+                                
+                                    
+                                <form action="/five/write_reply" method="POST">
                                     <input type="hidden" name="post_id" value="<%=p.id%>">
-                                    <input type="text" name="myreply">
-                                    <input type="submit" value="리플달기">
-                                  </form>
-                                <br/>
+                                    <input type="text" name="myreply" style="width:400px">
+                                    <button type="submit"  class="btn btn-warning" value="리플달기">리플달기</button>
+                                 </form>
+                                 
+                                <h4>
+                                    <% p.replies.each do |r|%>
+                                    
+                                        <%= r.content%> 
+                                        
+                                            <div class="reply">
+                                                <a href="/five/sip">삭제</a><br>
+                                                <a href="/five/sip">수정</a><br><hr>
+                                            </div>
+                                  <%end%>
+                                </h4>
+                                <br>
                           </div>
                         </div>
                     </div>

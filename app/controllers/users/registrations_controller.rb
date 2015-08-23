@@ -40,10 +40,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
    def configure_sign_up_params
+    
      devise_parameter_sanitizer.for(:sign_up) << :sex
      devise_parameter_sanitizer.for(:sign_up) << :age
      devise_parameter_sanitizer.for(:sign_up) << :univ
-     devise_parameter_sanitizer.for(:sign_up) << :region     
+     devise_parameter_sanitizer.for(:sign_up) << :region 
+     
+     
+
    end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -54,6 +58,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
      devise_parameter_sanitizer.for(:account_update) << :region
    end
 
+
+  
+  
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
   #   super(resource)

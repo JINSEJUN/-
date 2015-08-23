@@ -7,6 +7,8 @@ class CreatePosts < ActiveRecord::Migration
       t.string :post_univ_other
       t.string :post_password
       t.text :post_content
+      
+      t.string :passwd_check
 
 
       t.timestamps null: false

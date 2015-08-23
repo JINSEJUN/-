@@ -9,11 +9,15 @@
           <a href="#"><img src="/assets/univ.PNG" width="200"/></a> 
       </div>
       <div class="col-md-4">
-          대학 검색해 주세요.
-          
-          <form action="/five/chil" method="POST">
-            <input type="text" name="search"> <br>
-            <input type="submit" value="매칭하기">
-          </form>
+      
+        <form action="/five/chil" method="POST">
+          <select name="search" class="panel panel-primary">
+              <option value="">대학교 선택</option>
+              <option value="인하대학교">인하대학교</option>
+              <option value="성신여자대학교">성신여자대학교</option>
+          </select> <br><br>
+          <input class="btn btn-primary" type="submit" value="매칭하기">
+        </form>
+
       </div>
 </div>
