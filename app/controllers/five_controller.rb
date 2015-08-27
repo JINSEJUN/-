@@ -70,6 +70,8 @@ class FiveController < ApplicationController
         post.post_univ_other = params[:univ_other]
         post.post_password = params[:passwd]
         post.post_content = params[:content]
+        
+
         post.save
         
       
