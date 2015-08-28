@@ -24,13 +24,12 @@ class FiveController < ApplicationController
     end
     
     def oh
-        @university = University.all
+        
         @posts = Post.all
     end
     
     def read
         @detail = Post.find(params[:id]) 
-
     end
 
     def yuk
@@ -77,6 +76,7 @@ class FiveController < ApplicationController
         post.number = params[:number]
         post.post_content = params[:content]
         post.univ = params[:search]
+        post.email = params[:email]
 
         post.save
     end
@@ -110,6 +110,7 @@ class FiveController < ApplicationController
         my_reply = Reply.new
         my_reply.post_id = params[:post_id]
         my_reply.content = params[:myreply]
+        my_reply.email = params[:email]
         my_reply.save
         redirect_to(:back)
     end

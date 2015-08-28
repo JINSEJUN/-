@@ -3,9 +3,19 @@
 <h2> <%= @detail.post_content %> </h2>
 
 
+<!-- 우리가 우선 컨트롤러에 @reply = Reply.find([:id])로 받아준다음에, @reply.email하면 될거같은데 그치? -->
+
 
 <% @detail.replies.each do |x| %>
-    <%= x.content %> <a href="#"> 수정 </a> <a href="#"> 삭제 </a> <br>
+
+<%= x.content %>
+
+    <% if current_user.email == x.email %>
+
+     <a href="#"> 수정 </a> <a href="#"> 삭제 </a>
+    
+    <% end %>
+    <br>
 <% end %>
 
 
@@ -14,8 +24,8 @@
 
 <% if @detail.replies.count < 3 %>
 
-
     <form action="/five/write_reply" method="POST">
+        <input type="hidden" name="email" value="<%= current_user.email %>">
         <input type="hidden" name="post_id" value="<%=@detail.id%>">
         <input type="text" name="myreply">
         <input type="submit" value="리플달기">
@@ -23,11 +33,17 @@
     
 <% else %>
 
-    <h1> 선착순 마감 되었습니다. </h1>
+<h1> 선착순 마감되었습니다. </h1>
+    
 
 <% end %>
 
 <a href="/"> 돌아가기 </a> &nbsp
+
+
+<% if current_user.email == @detail.email %>
+
 <a href="/five/modify2/<%=@detail.id%>"> 수정 </a> &nbsp
 <a href="/five/delete/<%=@detail.id%>"> 삭제 </a>
 
+<% end %>

@@ -3,7 +3,8 @@
 <h1>만남 정보를 적어주세요</h1> <br>
 <div class="container form-group" style="text-align:center;">    
     <form action="/five/write" method="POST">
-        <input type="text" class="form-control" value="<%= current_user.univ %>" name="search" disabled> <br>
+        <input type="hidden" class="form-control" value="<%= current_user.email %>" name="email" readonly> <br>
+        <input type="text" class="form-control" value="<%= current_user.univ %>" name="search" readonly> <br>
         <input type="text" class="form-control" name="univ" placeholder="만날 장소를 적어주세요(ex) 연세대 입구)"><br>
         
         <input type="text" name="univ_other" class="form-control" placeholder="만날 시간을 적어주세요(ex) 22일 저녁7시)"><br>

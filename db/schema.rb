@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20150827104800) do
 
   create_table "posts", force: :cascade do |t|
+    t.string   "email"
     t.string   "univ"
     t.string   "post_univ"
     t.string   "post_univ_other"
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150827104800) do
   create_table "replies", force: :cascade do |t|
     t.integer  "post_id"
     t.string   "content"
+    t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

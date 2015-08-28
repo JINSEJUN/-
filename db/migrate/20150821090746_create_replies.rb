@@ -4,6 +4,7 @@ class CreateReplies < ActiveRecord::Migration
 
       t.integer :post_id
       t.string :content
+      t.string :email
 
       t.timestamps null: false
     end
