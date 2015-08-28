@@ -1,18 +1,29 @@
 <%= render :partial => "five/pencil" %>
 
+
+<% if params[:passwd] == @one_post.post_password %>
+
+
 <h1>후기를 수정해주세요</h1> <br>
 <div style="text-align:center;" class="container form-group">    
-    <form action="/five/write/<%= @one_post.id%>" method="POST">
+    <form action="/five/update/<%= @one_post.id%>" method="POST">
             
     <input type="text" class="form-control" name="univ" value="<%= @one_post.post_univ%>"><br>
     <input type="text" class="form-control" name="univ_other" value="<%= @one_post.post_univ_other%>"><br>
-    <input type="password" name="passwd" class="form-control" value="<%= @one_post.post_password%>"><br>
-    <textarea rows="4" cols="50" name="content" class="form-control" value="<%= @one_post.post_content%>"> </textarea><br>
-    <input type="file" name="file"> <br>
+    <input type="text" class="form-control" name="number" value="<%= @one_post.number%>"><br>
+    <textarea rows="4" cols="50" name="content" class="form-control"> <%= @one_post.post_content%> </textarea><br>
     <input type="submit" class="btn btn-primary" value="후기 수정하기">
     <br> <br>
     
     
 </form>
 </div>
+
+<% else %>
+
+<h1> 비밀번호가 틀렸습니다 </h1>
+<a href="/"> 돌아가기 </a>
+
+<% end %>
+
 

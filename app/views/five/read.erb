@@ -1,0 +1,33 @@
+<h1> <%= @detail.post_univ %> / <%= @detail.post_univ_other %> / <%= @detail.number %> </h1>
+
+<h2> <%= @detail.post_content %> </h2>
+
+
+
+<% @detail.replies.each do |x| %>
+    <%= x.content %> <a href="#"> 수정 </a> <a href="#"> 삭제 </a> <br>
+<% end %>
+
+
+
+<!-- post_id > 4면 밑에부분이 안보이도록만 해주면서 마감되었습니다를 넣어주면 될거같애 -->
+
+<% if @detail.replies.count < 3 %>
+
+
+    <form action="/five/write_reply" method="POST">
+        <input type="hidden" name="post_id" value="<%=@detail.id%>">
+        <input type="text" name="myreply">
+        <input type="submit" value="리플달기">
+    </form>
+    
+<% else %>
+
+    <h1> 선착순 마감 되었습니다. </h1>
+
+<% end %>
+
+<a href="/"> 돌아가기 </a> &nbsp
+<a href="/five/modify2/<%=@detail.id%>"> 수정 </a> &nbsp
+<a href="/five/delete/<%=@detail.id%>"> 삭제 </a>
+

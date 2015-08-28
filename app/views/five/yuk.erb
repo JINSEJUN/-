@@ -1,26 +1,41 @@
 
 <%= render :partial => "five/pencil" %>
+<br><br><br><br><br><br>
 
 
-    <div class="container row">
-      <div class="col-md-3"></div>
-      <div class="col-md-4">
-      <br><br><br><br>
-          <a href="#"><img src="/assets/univ.PNG" width="200"/></a> 
-      </div>
-      <div class="col-md-4">
-      
-        <form action="/five/chil" method="POST">
-        <br><br><br><br><br><br><br>
-          <select name="search" class="panel panel-primary" style="height:50px;
-        line-height:50px;
-        background:#f4f4f4;">
-              <option value="">대학교 선택</option>
-              <option value="인하대학교">인하대학교</option>
-              <option value="성신여자대학교">성신여자대학교</option>
-          </select> <br><br>
-          <input class="btn btn-primary" type="submit" value="매칭하기">
+<div class="container-fluid row">
+    <div class="col-lg-2" style="background-color:green">
+        <br>
+        <a href="/five/oh">전체</a>
+        <br><br>
+        <form action="/five/yuk" method="POST">
+            <select name="search" class="panel panel-primary" style="height:50px;
+                line-height:50px;
+                background:#f4f4f4;">
+                      <option value="">대학교 선택</option>
+                      <option value="인하대학교">인하대학교</option>
+                      <option value="성신여자대학교">성신여자대학교</option>
+                  </select> <br><br>
+          <input type="submit" value="검색">
         </form>
-
-      </div>
+    </div>
+    <div class="col-lg-10">
+            <% @result.reverse.each do |x| %>
+            <form action="/five/read/<%=x.id%>" method="POST">
+                <div class="container-fluid row">
+                    <div class="col-md-9">
+                <a href="/five/read/<%=x.id%>"> <%= x.post_univ %> / <%= x.post_univ_other %> / <%= x.number %> / <%= x.univ %> </a>
+                    </div>
+                    <div class="col-md-3">
+                <input type="submit" value="자세히 보기">
+                    </div>
+                </div>
+            </form> <br>
+            <% end %>
+            <br>
+                <form action="/five/goo" method="POST">
+                    <input class="btn btn-primary" type="submit" value="만남 적기"> <br> <br>
+                </form>
+    </div>
+    </div>
 </div>
