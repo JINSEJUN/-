@@ -92,9 +92,17 @@
   <br>
   
   <div class="row field">
-    <%= f.label :region , class:"col-lg-1" %>
-    <%= f.text_field :region, autofocus: true, :placeholder => "사는 지역은 어디신가요?", class: "col-lg-11" %>
+    <%= f.label :number , class:"col-lg-1" %>
+    <%= f.text_field :number, autofocus: true, :placeholder => "연락처를 입력해주세요", class: "col-lg-11" %>
   </div>
+  
+  <br>
+  
+  <div class="row field">
+    <%= f.label :Face_img , class:"col-lg-1" %>
+    <%= f.file_field :img, autofocus: true,  class: "col-lg-11" %>
+  </div>
+    
   <!-- END -->
 <br>
 <br>

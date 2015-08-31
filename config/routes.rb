@@ -3,7 +3,7 @@ Rails.application.routes.draw do
         registrations: 'users/registrations'
       }
     
-  root :to => 'five#main'
+  root :to => 'five#oh'
   
 
   

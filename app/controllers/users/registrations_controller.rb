@@ -44,8 +44,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
      devise_parameter_sanitizer.for(:sign_up) << :sex
      devise_parameter_sanitizer.for(:sign_up) << :age
      devise_parameter_sanitizer.for(:sign_up) << :univ
-     devise_parameter_sanitizer.for(:sign_up) << :region 
-     
+     devise_parameter_sanitizer.for(:sign_up) << :number
+     devise_parameter_sanitizer.for(:sign_up) << :img
      
 
    end
@@ -55,7 +55,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
      devise_parameter_sanitizer.for(:account_update) << :sex
      devise_parameter_sanitizer.for(:account_update) << :age
      devise_parameter_sanitizer.for(:account_update) << :univ
-     devise_parameter_sanitizer.for(:account_update) << :region
+     devise_parameter_sanitizer.for(:account_update) << :number
+     devise_parameter_sanitizer.for(:account_update) << :img
    end
 
 

@@ -1,0 +1,11 @@
+
+    <form action="/five/update2/<%=@check2.id %>" method="POST">
+        <input type="hidden" name="email" value="<%= current_user.email %>">
+        <input type="hidden" name="post_id" value="<%=@detail.id%>">
+
+        <input type="text" name="myreply" value="<%= @check2.content %>">
+        <input type="submit" value="리플달기">
+    </form>
+
+<a href="/"> 돌아가기 </a> &nbsp
+
