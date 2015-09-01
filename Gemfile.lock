@@ -65,6 +65,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-async (0.10.1)
+      devise (~> 3.2)
     erubis (2.7.0)
     excon (0.45.4)
     execjs (2.5.2)
@@ -279,6 +281,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
+  devise-async
   fog
   jbuilder (~> 2.0)
   jquery-rails
